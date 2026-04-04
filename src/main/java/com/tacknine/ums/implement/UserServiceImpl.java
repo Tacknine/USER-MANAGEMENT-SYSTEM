@@ -46,10 +46,6 @@ public class UserServiceImpl implements UserService
         return null;
     }
 
-    @Override
-    public UserResponseDto GetUserById(Long id) {
-        return null;
-    }
 
     @Override
     public void DeleteUserById(Long id) {
