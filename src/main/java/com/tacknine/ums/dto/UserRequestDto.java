@@ -4,7 +4,7 @@ import com.tacknine.ums.entity.User;
 
 public class UserRequestDto {
 
-
+// vinavyotoka kwa user
     public Long id;
     private String  firstName;
     private String  lastName;
@@ -14,9 +14,14 @@ public class UserRequestDto {
     private Integer age;
     private Double  salary;
 
+
+// default constructor
     public UserRequestDto() {}
+
+    //parameterlized constructor
+
     public User toUser() {
-        User user = new User();
+        User user = new User();// object ya user
         user.setId(this.id);
         user.setLastName(this.lastName);
         user.setFirstName(this.firstName);
@@ -27,34 +32,31 @@ public class UserRequestDto {
         user.setSalary(this.salary);
         return user;
     }
+
+
+    //getter na setter
+
     public Long getId() {
         return id;
     }
-
     public String getFirstName() {
         return firstName;
     }
-
     public String getLastName() {
         return lastName;
     }
-
     public String getEmail() {
         return email;
     }
-
     public String getPassword() {
         return password;
     }
-
     public String getRole() {
         return role;
     }
-
     public Integer getAge() {
         return age;
     }
-
     public Double getSalary() {
         return salary;
     }

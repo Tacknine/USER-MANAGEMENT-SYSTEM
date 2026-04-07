@@ -1,27 +1,43 @@
 package com.tacknine.ums.dto;
-
 import com.tacknine.ums.entity.User;
-
 public class UserResponseDto {
+
+
+    // kinachorudi kwa user
+
     private Long id;
     private String  lastName;
     private String  firstName;
     private String  email;
-
-    //private String  password;
-    //private String  role;
+    private String  role;
     private Integer age;
-    private String salary;
+    private Double salary;
+
+
+    //default constructor
+
     public UserResponseDto() {
     }
+
+
+    //parameterized constructor
+
    public UserResponseDto(User user) {
+
+         // haina object
        this.setId(user.getId());
        this.setLastName(user.getLastName());
        this.setFirstName(user.getFirstName());
        this.setAge(user.getAge());
        this.setEmail(user.getEmail());
-       this.setSalary(user.getSalary().toString());
+       this.setSalary(user.getSalary());
+       this.setRole(user.getRole());
+
    }
+
+
+   //getter na setter
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -62,11 +78,21 @@ public class UserResponseDto {
         this.age = age;
     }
 
-    public String getSalary() {
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public Double getSalary() {
         return salary;
     }
 
-    public void setSalary(String salary) {
+    public void setSalary(Double salary) {
         this.salary = salary;
     }
+
+
 }
