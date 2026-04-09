@@ -2,12 +2,15 @@ package com.tacknine.ums.exception;
 
 import com.tacknine.ums.Response.ApiResponse;
 import com.tacknine.ums.Response.ApiResponseBuilder;
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.validation.ValidationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+
+@Hidden
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 

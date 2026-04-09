@@ -11,5 +11,10 @@ public interface UserService {
     UserResponseDto updateUser(Long id, UserRequestDto request);
     UserResponseDto getUserById(Long id);
     boolean deleteUserById(Long id);
+
+    void DeleteUserById(Long id);
+
     UserResponseDto getUserByAge(Integer age);
+
+    UserResponseDto updateUserRole(Long id, String role);
 }

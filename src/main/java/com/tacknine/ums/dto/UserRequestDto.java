@@ -34,7 +34,7 @@ public class UserRequestDto {
     }
 
 
-    //getter na setter
+    //getter
 
     public Long getId() {
         return id;
