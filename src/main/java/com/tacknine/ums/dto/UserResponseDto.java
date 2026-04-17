@@ -9,7 +9,6 @@ public class UserResponseDto {
     private String  lastName;
     private String  firstName;
     private String  email;
-    private String  role;
     private Integer age;
     private Double salary;
 
@@ -31,12 +30,11 @@ public class UserResponseDto {
        this.setAge(user.getAge());
        this.setEmail(user.getEmail());
        this.setSalary(user.getSalary());
-       this.setRole(user.getRole());
 
    }
 
 
-   //getter na setter
+   //setter
 
     public void setId(Long id) {
         this.id = id;
@@ -76,14 +74,6 @@ public class UserResponseDto {
 
     public void setAge(Integer age) {
         this.age = age;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 
     public Double getSalary() {

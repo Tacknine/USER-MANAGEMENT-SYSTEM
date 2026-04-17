@@ -15,7 +15,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository repository;
-    private final UserMapper userMapper; // ✅ inject UserMapper
+    private final UserMapper userMapper; // inject UserMapper
 
     public UserServiceImpl(UserRepository repository, UserMapper userMapper) {
         this.repository = repository;
@@ -26,13 +26,13 @@ public class UserServiceImpl implements UserService {
     public List<UserResponseDto> getAllUsers() {
         return repository.findAll()
                 .stream()
-                .map(userMapper::toDto) // ✅ use instance method
+                .map(userMapper::toDto) // use instance method
                 .toList();
     }
 
     // Create user
     public UserResponseDto createUser(UserRequestDto request) {
-        User user = userMapper.toEntity(request); // ✅ use injected mapper
+        User user = userMapper.toEntity(request); // use injected mapper
         User savedUser = repository.save(user);
         return userMapper.toDto(savedUser);
     }
@@ -85,7 +85,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void DeleteUserById(Long id) {
-        // ❌ optional duplicate, can remove
+        //  optional duplicate, can remove
     }
 
     @Override

@@ -2,6 +2,9 @@ package com.tacknine.ums.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import org.aspectj.weaver.ast.Not;
+
+import java.util.Set;
+
 @Entity
 @Table(name="users")
 public class User {
@@ -18,13 +21,14 @@ public class User {
     private String  email;
     @Column(nullable = false)
     private String  password;
-    @Column(nullable = true)
-    private String  role;
     @Column(nullable = false)
     private Integer age;
     @Column(nullable = false)
     private Double  salary;
 
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    Set<Role> role;
 
 
     //getter na setter
@@ -57,12 +61,6 @@ public class User {
     }
     public void setPassword(String password) {
         this.password = password;
-    }
-    public String getRole() {
-        return role;
-    }
-    public void setRole(String role) {
-        this.role = role;
     }
     public Integer getAge() {
         return age;

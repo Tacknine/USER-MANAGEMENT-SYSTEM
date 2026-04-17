@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserMapper {
 
-    private final PasswordEncoder passwordEncoder; // ✅ final
+    private final PasswordEncoder passwordEncoder; //  final
 
-    // ✅ Constructor injection (Spring automatically injects bean)
+    //  Constructor injection (Spring automatically injects bean)
     public UserMapper(PasswordEncoder passwordEncoder) {
         this.passwordEncoder = passwordEncoder;
     }
@@ -23,8 +23,7 @@ public class UserMapper {
         user.setEmail(dto.getEmail());
         user.setAge(dto.getAge());
         user.setSalary(dto.getSalary());
-        user.setRole(dto.getRole());
-        user.setPassword(passwordEncoder.encode(dto.getPassword())); // ✅ safe
+        user.setPassword(passwordEncoder.encode(dto.getPassword())); //  safe
         return user;
     }
 
@@ -36,7 +35,6 @@ public class UserMapper {
         dto.setEmail(user.getEmail());
         dto.setAge(user.getAge());
         dto.setSalary(user.getSalary());
-        dto.setRole(user.getRole());
         return dto;
     }
 }

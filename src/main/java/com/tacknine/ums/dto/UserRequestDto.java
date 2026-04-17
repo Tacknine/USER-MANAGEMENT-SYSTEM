@@ -27,7 +27,6 @@ public class UserRequestDto {
         user.setFirstName(this.firstName);
         user.setEmail(this.email);
         user.setPassword(this.password);
-        user.setRole(this.role);
         user.setAge(this.age);
         user.setSalary(this.salary);
         return user;
@@ -50,9 +49,6 @@ public class UserRequestDto {
     }
     public String getPassword() {
         return password;
-    }
-    public String getRole() {
-        return role;
     }
     public Integer getAge() {
         return age;

@@ -27,7 +27,6 @@ public class AuthServiceImpl implements AuthService {
     public UserResponseDto register(UserRequestDto request) {
         User user = userMapper.toEntity(request);
         user.setPassword(passwordEncoder.encode(request.getPassword()));
-        user.setRole("USER");
         userRepository.save(user);
         return userMapper.toDto(user);
     }
@@ -42,11 +41,9 @@ public class AuthServiceImpl implements AuthService {
         }
 
         // Generate JWT using username and roles
-        String token = jwtUtil.generateToken(user.getEmail(), List.of(user.getRole()));
-
+        String token = jwtUtil.generateToken(user.getEmail(),  List.of(user.getId()),
         AuthResponseDto response = new AuthResponseDto();
         response.setToken(token);
-        response.setRole(user.getRole());
         response.setEmail(user.getEmail());
         return response;
     }

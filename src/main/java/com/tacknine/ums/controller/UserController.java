@@ -67,7 +67,7 @@ public class UserController {
 
 
     @PutMapping("/{id}/role")
-    @PreAuthorize("hasRole('ADMIN')") // ✅ Endpoint hii accessible tu kwa admin
+    @PreAuthorize("hasRole('ADMIN')") //  Endpoint hii accessible tu kwa admin
     public ApiResponse<UserResponseDto> updateUserRole(
             @PathVariable Long id,
             @RequestParam String role) {
